@@ -10,6 +10,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>EurekaServer</module>
+        <module>ConfigServer</module>
+        <module>Order</module>
     </modules>
 
     <!--父依赖-->
@@ -24,7 +26,7 @@
         <!--web依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starte-web</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <!--JDK 9 存在缺失jar包的问题,详情请请看SpringCloud笔记-->

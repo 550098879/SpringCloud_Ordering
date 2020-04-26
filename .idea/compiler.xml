@@ -6,11 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ConfigServer" />
         <module name="EurekaServer" />
+        <module name="Order" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ConfigServer" target="1.8" />
       <module name="EurekaServer" target="1.8" />
+      <module name="Order" target="1.8" />
       <module name="SpringCloud_Ordering" target="1.8" />
     </bytecodeTargetLevel>
   </component>
