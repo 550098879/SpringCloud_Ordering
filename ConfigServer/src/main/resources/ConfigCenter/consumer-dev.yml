@@ -1,0 +1,8 @@
+#consumer消费者模块配置文件
+server:
+  port: 8030
+spring:
+  thymeleaf:
+    prefix: classpath:/static/
+    suffix: .html
+

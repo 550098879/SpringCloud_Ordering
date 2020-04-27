@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+    1.映射namespace:当前mapper对应的接口类
+-->
+
+<mapper namespace="org.zyx.repository.TypeRepository">
+
+      <select id="findById" resultType="org.zyx.entity.Type" parameterType="long">
+             select * from t_type where id=#{id}
+      </select>
+
+
+
+
+
+</mapper>

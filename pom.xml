@@ -12,6 +12,8 @@
         <module>EurekaServer</module>
         <module>ConfigServer</module>
         <module>Order</module>
+        <module>Menu</module>
+        <module>Consumer</module>
     </modules>
 
     <!--父依赖-->

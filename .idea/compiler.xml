@@ -2,18 +2,23 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ConfigServer" />
+        <module name="Consumer" />
         <module name="EurekaServer" />
+        <module name="Menu" />
         <module name="Order" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ConfigServer" target="1.8" />
+      <module name="Consumer" target="1.8" />
       <module name="EurekaServer" target="1.8" />
+      <module name="Menu" target="1.8" />
       <module name="Order" target="1.8" />
       <module name="SpringCloud_Ordering" target="1.8" />
     </bytecodeTargetLevel>
