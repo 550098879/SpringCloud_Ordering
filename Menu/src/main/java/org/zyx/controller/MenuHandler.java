@@ -6,8 +6,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.zyx.entity.Menu;
 import org.zyx.entity.MenuVO;
+import org.zyx.entity.Type;
 import org.zyx.repository.MenuRepository;
+import org.zyx.repository.TypeRepository;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**菜单控制器
@@ -22,6 +25,9 @@ public class MenuHandler {
 
     @Autowired
     private MenuRepository menuRepository;
+
+    @Autowired
+    private TypeRepository typeRepository;
 
     @GetMapping("/index")
     public String index(){
@@ -38,6 +44,35 @@ public class MenuHandler {
     @GetMapping("/counts")
     public Integer counts(){
         return menuRepository.counts();
+    }
+
+    @DeleteMapping("/deleteById/{id}")
+    public void deleteById(@PathVariable("id") long id){
+        menuRepository.deleteById(id);
+    }
+
+    @GetMapping("/findById/{id}")
+    public Menu findById(@PathVariable("id") long id){
+        return menuRepository.findById(id);
+    }
+
+    @GetMapping("/findTypes")
+    public Collection<Type> findTypes(){
+        return typeRepository.findAll();
+    }
+
+    /**
+     * @RequestBody 将json数据接转换为对象
+     * @param menu
+     */
+    @PostMapping("/save")
+    public void save(@RequestBody Menu menu){
+        menuRepository.save(menu);
+    }
+
+    @PutMapping("/update")
+    public void update(@RequestBody Menu menu){
+        menuRepository.update(menu);
     }
 
 }

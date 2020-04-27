@@ -20,12 +20,12 @@ public interface MenuRepository {
     @Select("select count(1) from t_menu")
     int counts();
 
-    Menu findById(int id);
+    Menu findById(long id);
 
     int save(Menu menu);
 
     int update(Menu menu);
 
-    int deleteById(int id);
+    int deleteById(long id);
 
 }

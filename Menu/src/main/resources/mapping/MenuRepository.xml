@@ -14,6 +14,7 @@
         <result column="name" property="name"></result>
         <result column="price" property="price"></result>
         <result column="flavor" property="flavor"></result>
+        <result column="tid" property="tid"></result>
         <association property="type"
                      select="org.zyx.repository.TypeRepository.findById" column="tid">
         </association>
@@ -25,12 +26,12 @@
         select * from t_menu limit #{param1},#{param2}
     </select>
 
-    <select id="findById" resultType="org.zyx.entity.Menu" parameterType="java.lang.Integer">
+    <select id="findById" resultType="org.zyx.entity.Menu" parameterType="java.lang.Long">
         select * from t_menu where id=#{id}
     </select>
     
     <insert id="save" parameterType="org.zyx.entity.Menu">
-        insert into t_menu(name,price,flavor) values(#{name},#{price},#{flavor})
+        insert into t_menu(name,price,flavor,tid) values(#{name},#{price},#{flavor},#{type.id})
     </insert>
 
     <update id="update" parameterType="org.zyx.entity.Menu">
@@ -45,11 +46,14 @@
             <if test="flavor!=null">
                 flavor=#{flavor},
             </if>
+            <if test="tid!=null">
+                flavor=#{tid},
+            </if>
         </set>
         where id=#{id}
     </update>
 
-    <delete id="deleteById" parameterType="java.lang.Integer">
+    <delete id="deleteById" parameterType="java.lang.Long">
         delete from t_menu where id=#{id}
     </delete>
 
