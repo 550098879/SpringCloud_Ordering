@@ -53,6 +53,7 @@ public class MenuHandler {
 
     @GetMapping("/findById/{id}")
     public Menu findById(@PathVariable("id") long id){
+
         return menuRepository.findById(id);
     }
 

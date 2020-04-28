@@ -37,11 +37,13 @@ public class MenuHandler {
         return "redirect:/menu/redirect/index";
     }
 
-    @ResponseBody
     @GetMapping("/findById/{id}")
-    public Menu findById(@PathVariable("id") long id){
+    public ModelAndView findById(@PathVariable("id") long id,ModelAndView modelAndView){
 
-        return menuFeign.findById(id);
+        modelAndView.addObject("list",menuFeign.findTypes());
+        modelAndView.addObject("menu",menuFeign.findById(id));
+        modelAndView.setViewName("menu_update");
+        return modelAndView;
 }
 
     @GetMapping("/findTypes")

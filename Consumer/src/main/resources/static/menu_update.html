@@ -9,6 +9,8 @@
 <body>
 <div class="layui-container" style="margin-top: 50px;">
 
+    <a href="/menu/redirect/index" class="layui-btn">回到首页</a>
+
     <div class="layui-container" style="width: 500px;height: 330px;padding-top: 60px;">
         <form class="layui-form" action="/menu/update" method="post">
             <div class="layui-form-item">
@@ -40,7 +42,8 @@
                 <div class="layui-input-inline">
                     <select name="type.id">
                         <option th:each="type:${list}" th:text="${type.name}" th:value="${type.id}" th:if="${menu.type.id == type.id}" selected></option>
-                        <option th:each="type:${list}" th:text="${type.name}" th:value="${type.id}" th:if="${menu.type.id != type.id}" ></option>
+                        <option th:each="type:${list}" th:text="${type.name}" th:value="${type.id}"  th:if="${menu.type.id != type.id}" ></option>
+
                     </select>
                 </div>
             </div>
